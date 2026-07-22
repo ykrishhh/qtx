@@ -1,8 +1,8 @@
-# MorphShell
+# QTX
 
 A sleek Termux theme with a smart prompt, syntax highlighting, a dynamic animated banner, and a built-in security toolkit.
 
-> Built by [ykrishhh](https://github.com/ykrishhh) — Security + Dev
+> Dev: [@harry6e](https://github.com/harry6e)
 
 ## Features
 
@@ -16,15 +16,15 @@ A sleek Termux theme with a smart prompt, syntax highlighting, a dynamic animate
 
 ```
 pkg install git fish eza bat starship nmap curl python
-git clone https://github.com/ykrishhh/MorphShell.git
-cd MorphShell
+git clone https://github.com/harry6e/QTX.git
+cd QTX
 chmod +x install.sh
 ./install.sh
 ```
 
 After installation:
 
-1. Launch Termux to see the animated MorphShell banner
+1. Launch Termux to see the animated QTX banner
 2. The shell will automatically switch to fish
 3. Customize your prompt name during setup
 
@@ -78,7 +78,7 @@ See [CHANGELOG.md](CHANGELOG.md) for release history.
 ## Project Structure
 
 ```
-MorphShell/
+QTX/
 ├── assets/
 │   ├── config.fish          # Fish shell config + aliases
 │   ├── colors.properties    # Termux color scheme
@@ -104,14 +104,14 @@ MorphShell/
 ├── CHANGELOG.md             # Release history
 ├── TROUBLESHOOTING.md       # Real Termux problems & fixes
 ├── CHEATSHEET.md            # Quick security commands
-├── install.sh               # MorphShell + toolkit installer
+├── install.sh               # QTX + toolkit installer
 └── LICENSE                  # MIT License
 ```
 
 ## Credits
 
-- **Built by** [ykrishhh](https://github.com/ykrishhh)
-- **Original MorphShell theme** by [termuxvoid](https://github.com/termuxvoid)
+- **Dev** [@harry6e](https://github.com/harry6e)
+- **Original theme** by [termuxvoid](https://github.com/termuxvoid)
 - **Security toolkit** — custom tools for Termux pentesting
 
 ## License

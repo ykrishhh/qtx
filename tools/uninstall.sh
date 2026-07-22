@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# uninstall.sh — Clean MorphShell removal
+# uninstall.sh — Clean QTX removal
 
 set -e
 
@@ -10,7 +10,7 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 echo -e "${CYAN}╔════════════════════════════════════════╗${NC}"
-echo -e "${CYAN}║  MorphShell — Uninstall                 ║${NC}"
+echo -e "${CYAN}║  QTX — Uninstall                 ║${NC}"
 echo -e "${CYAN}╚════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -19,19 +19,19 @@ ok()   { echo -e "  ${GREEN}✓${NC} $1"; }
 removed() { echo -e "  ${RED}✗${NC} $1"; }
 
 # --- 1. Show what will be removed ---
-echo -e "${YELLOW}The following MorphShell components will be removed:${NC}"
+echo -e "${YELLOW}The following QTX components will be removed:${NC}"
 echo ""
 echo "  Tool symlinks:    ~/.local/bin/tk-*"
 echo "  Fish config:      ~/.config/fish/config.fish"
 echo "  Starship config:  ~/.config/starship.toml"
 echo "  Termux assets:    ~/.termux/font.ttf"
 echo "                    ~/.termux/colors.properties"
-echo "  MOTD:             ~/.config/morphshell"
-echo "  Completions:      ~/.config/fish/completions/morphshell.fish"
+echo "  MOTD:             ~/.config/qtx"
+echo "  Completions:      ~/.config/fish/completions/qtx.fish"
 echo "  Bashrc entries:   Security Toolkit lines"
 echo ""
 echo -e "${YELLOW}This will NOT remove:${NC}"
-echo "  - MorphShell repository (~/MorphShell)"
+echo "  - QTX repository (~/QTX)"
 echo "  - Git, Python, or other installed packages"
 echo "  - Other fish plugins or configs"
 echo ""
@@ -88,18 +88,18 @@ else
     removed "colors.properties not found"
 fi
 
-step "Removing morphshell MOTD"
-if [ -f ~/.config/morphshell ]; then
-    rm ~/.config/morphshell
-    ok "Removed morphshell"
+step "Removing qtx MOTD"
+if [ -f ~/.config/qtx ]; then
+    rm ~/.config/qtx
+    ok "Removed qtx"
 else
-    removed "morphshell not found"
+    removed "qtx not found"
 fi
 
 step "Removing fish completions"
-if [ -f ~/.config/fish/completions/morphshell.fish ]; then
-    rm ~/.config/fish/completions/morphshell.fish
-    ok "Removed morphshell.fish completions"
+if [ -f ~/.config/fish/completions/qtx.fish ]; then
+    rm ~/.config/fish/completions/qtx.fish
+    ok "Removed qtx.fish completions"
 else
     removed "completions not found"
 fi
@@ -128,5 +128,5 @@ echo ""
 echo "To restore default Termux shell:"
 echo "  chsh -s bash"
 echo ""
-echo "The MorphShell repository remains at ~/MorphShell"
-echo "Delete it manually if no longer needed: rm -rf ~/MorphShell"
+echo "The QTX repository remains at ~/QTX"
+echo "Delete it manually if no longer needed: rm -rf ~/QTX"

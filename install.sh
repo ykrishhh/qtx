@@ -18,7 +18,7 @@ for arg in "$@"; do
       echo "Usage: ./install.sh [OPTIONS]"
       echo ""
       echo "Options:"
-      echo "  --uninstall    Remove all MorphShell components"
+      echo "  --uninstall    Remove all QTX components"
       echo "  --skip-deps    Skip dependency installation"
       echo "  -h, --help     Show this help"
       exit 0
@@ -29,10 +29,10 @@ done
 if [ "$DO_UNINSTALL" -eq 1 ]; then
   if [ -f tools/uninstall.sh ]; then
     bash tools/uninstall.sh
-  elif [ -f ~/MorphShell/tools/uninstall.sh ]; then
-    bash ~/MorphShell/tools/uninstall.sh
+  elif [ -f ~/QTX/tools/uninstall.sh ]; then
+    bash ~/QTX/tools/uninstall.sh
   else
-    echo -e "${RED}Error: uninstall.sh not found. Run from MorphShell/ directory.${RESET}"
+    echo -e "${RED}Error: uninstall.sh not found. Run from QTX/ directory.${RESET}"
     exit 1
   fi
   exit 0
@@ -76,12 +76,12 @@ fi
 # --- Clone repo ---
 TMPDIR="${TMPDIR:-$HOME/tmp}"
 mkdir -p "$TMPDIR"
-DIR="$TMPDIR/MorphShell"
+DIR="$TMPDIR/QTX"
 rm -rf "$DIR"
 
-echo -e "${CYAN}[*] Cloning MorphShell...${RESET}"
-git clone -q https://github.com/termuxvoid/MorphShell "$DIR" || {
-  echo -e "${RED}[!] Failed to clone MorphShell repo${RESET}"
+echo -e "${CYAN}[*] Cloning QTX...${RESET}"
+git clone -q https://github.com/harry6e/QTX "$DIR" || {
+  echo -e "${RED}[!] Failed to clone QTX repo${RESET}"
   exit 1
 }
 
@@ -95,16 +95,16 @@ if [ "$(basename "$SHELL")" != "fish" ]; then
 fi
 
 # --- Prompt name ---
-read -rp "Enter prompt name [MorphShell]: " NAME
-NAME="${NAME:-MorphShell}"
+read -rp "Enter prompt name [QTX]: " NAME
+NAME="${NAME:-QTX}"
 
 mkdir -p ~/.config/fish/completions ~/.config ~/.termux ~/.local/bin
 
-# --- MorphShell theme ---
+# --- QTX theme ---
 cp "$ASSETS/config.fish" ~/.config/fish/config.fish
 cp "$ASSETS/font.ttf" "$ASSETS/colors.properties" ~/.termux
 sed "s/user-name/$NAME/g" "$ASSETS/starship.toml" > ~/.config/starship.toml
-sed "s/user-name/$NAME/g" "$ASSETS/motd" > ~/.config/morphshell
+sed "s/user-name/$NAME/g" "$ASSETS/motd" > ~/.config/qtx
 
 # --- Install all tools ---
 echo -e "${CYAN}[*] Installing security toolkit...${RESET}"
@@ -124,8 +124,8 @@ done
 echo -e "${GREEN}  Symlinked $INSTALLED tools to ~/.local/bin/${RESET}"
 
 # --- Fish completions ---
-if [ -f "$DIR/completions/morphshell.fish" ]; then
-  cp "$DIR/completions/morphshell.fish" ~/.config/fish/completions/
+if [ -f "$DIR/completions/qtx.fish" ]; then
+  cp "$DIR/completions/qtx.fish" ~/.config/fish/completions/
   echo -e "${GREEN}  Installed fish completions${RESET}"
 else
   echo -e "${YELLOW}  No completions found, skipping${RESET}"
@@ -157,7 +157,7 @@ if ! grep -q 'TMPDIR' ~/.bashrc 2>/dev/null; then
 fi
 
 # --- Success ---
-echo -e "${GREEN}[✓] MorphShell + Security Toolkit installed!${RESET}"
+echo -e "${GREEN}[✓] QTX + Security Toolkit installed!${RESET}"
 echo ""
 echo -e "${YELLOW}Available commands:${RESET}"
 echo "  scan <target>     Network port scanner"

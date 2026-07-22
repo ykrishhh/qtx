@@ -1,6 +1,6 @@
 # Features Plan
 
-MorphShell roadmap — what's done, what's next.
+QTX roadmap — what's done, what's next.
 
 ## v2.0 (Current)
 
@@ -45,7 +45,7 @@ MorphShell roadmap — what's done, what's next.
 ### Shell Improvements
 - [ ] Fish plugin manager (fisher) integration
 - [ ] Custom starship prompt with git + security status
-- [ ] Auto-update checker for MorphShell
+- [ ] Auto-update checker for QTX
 - [ ] Motd randomizer (multiple banner designs)
 
 ### Toolkit Improvements
@@ -74,7 +74,7 @@ MorphShell roadmap — what's done, what's next.
 - [ ] Export to Notion/Sheets via Composio
 
 ### Shell Power Features
-- [ ] Fish theme switcher (morphshell theme list)
+- [ ] Fish theme switcher (qtx theme list)
 - [ ] Project detection (auto-cd, auto-venv, auto-nvm)
 - [ ] Smart history (per-project, searchable, deduped)
 - [ ] Fish hooks for security (warn on suspicious commands)
@@ -105,7 +105,7 @@ MorphShell roadmap — what's done, what's next.
 | Date | Milestone |
 |------|-----------|
 | 2026-07-22 | v2.0 — 10 security tools, completions, uninstall, bug fixes |
-| 2026-07-22 | Forked from termuxvoid/MorphShell |
+| 2026-07-22 | First release by @harry6e |
 | 2026-07-22 | First commit: theme + toolkit |
 
 ---

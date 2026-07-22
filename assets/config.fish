@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 function fish_greeting
-tte --frame-rate 666 -i ~/.config/morphshell --random-effect --exclude-effects matrix
+tte --frame-rate 666 -i ~/.config/qtx --random-effect --exclude-effects matrix
 end
 # navigation
 alias ..='cd ..'

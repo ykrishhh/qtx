@@ -1,4 +1,4 @@
-# Fish completions for MorphShell security toolkit
+# Fish completions for QTX security toolkit
 
 complete -c scan -f
 complete -c recon -f
